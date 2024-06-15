@@ -1,0 +1,40 @@
+@import '../styles/abstracts.scss';
+
+
+.essentialCard {
+    margin-bottom: -4rem;
+}
+
+.sectionSeparator {
+    margin-top: 5rem;
+}
+
+@media screen and (min-width: 300px) {
+    .essentialCard {
+        margin-bottom: -12rem;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .essentialCard {
+        margin-bottom: -5rem;
+    }
+}
+
+@media screen and (min-width: 460px) {
+    .essentialCard {
+        margin-bottom: -3rem;
+    }
+}
+
+@media screen and (min-width: width("md")){
+    .sectionSeparator {
+        margin-top: 6rem;
+    }
+}
+
+@media screen and (min-width: width("lg")) {
+    .essentialCard {
+        margin-bottom: 0;
+    }
+}
