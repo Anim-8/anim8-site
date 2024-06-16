@@ -2,7 +2,6 @@
 import Image from "next/image"
 import React, { useRef, useState } from 'react'
 import KeyValuePair from '@/models/KeyValuePair'
-import useDimensions from '../../../hooks/useDimensions';
 
 type NavigationProps = {
     links: KeyValuePair[];
