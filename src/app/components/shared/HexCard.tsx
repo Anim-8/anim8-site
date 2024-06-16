@@ -5,7 +5,7 @@ const merriweather = Merriweather({ subsets: ["latin"], weight: "400" });
 
 type HexCardProps = {
     title: string;
-    content: string;
+    content: React.ReactNode;
 }
 
 const HexCard = ({ title, content }: HexCardProps) => {
@@ -19,7 +19,7 @@ const HexCard = ({ title, content }: HexCardProps) => {
             </g>
             <text fontSize={20} className={merriweather.className} x="50%" y="28%" dominantBaseline="middle" textAnchor="middle" fill="#A8C8C0">{title}</text>    
             <foreignObject fontSize={14} className={merriweather.className} x="18%" y="35%" width={275} height={150} dominantBaseline="middle" textAnchor="middle" fill="white">
-                <p>{content}</p>
+                { content }
             </foreignObject>
             <defs>
                 <filter id="filter0_f_61_70" x="48.0513" y="48.0513" width="338.897" height="338.897" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">

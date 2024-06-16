@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Landing from "./Landing";
 import MissionStatement from "./MissionStatement";
 import Essential from "./Essential";
+import Approach from "./Approach";
 
 const Home:NextPage = () => {
   return (
@@ -9,6 +10,7 @@ const Home:NextPage = () => {
       <Landing />
       <MissionStatement />
       <Essential />
+      <Approach />
     </>
   );
 }
