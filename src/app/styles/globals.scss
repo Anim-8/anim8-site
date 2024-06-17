@@ -31,3 +31,9 @@ html {
 a {
   text-decoration: none !important;
 }
+
+h1, h3 {
+  background: linear-gradient(to right, #fff, #a8c8c0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
