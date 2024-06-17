@@ -3,6 +3,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --max-width: 1100px;
   --theme-color: black;

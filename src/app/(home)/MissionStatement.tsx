@@ -4,7 +4,7 @@ import Statement from '../components/shared/Statement'
 
 const MissionStatement = () => {
     return (
-        <Statement>
+        <Statement id="quality">
             <SubHeader className='mt-20 mb-5'>Quality and Process Control</SubHeader>
             <p>
                 Shift the paradigm in your Production Standards with Our Solutions.

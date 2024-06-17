@@ -12,7 +12,7 @@ const cards: CardData[] = [
 
 const Essential = () => {
     return (
-        <div className={`w-full text-center ${styles.sectionSeparator}`}>
+        <div className={`w-full text-center ${styles.sectionSeparator}`} id="essentials">
             <SubHeader>Essentials</SubHeader>
             <Cards cards={cards} />
         </div>
