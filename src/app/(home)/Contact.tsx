@@ -8,7 +8,9 @@ const Contact = () => {
             <SubHeader className='mb-4'>Contact</SubHeader>
             <div className="flex items-center">
                 <div className='mt-2.5'>
-                    <Image  src="/mail.svg" alt="email icon" width={50} height={25} />
+                    <a href="mailto:info@anim8.tech" rel="noreferrer">
+                    <Image src="/mail.svg" alt="email icon" width={50} height={25} />
+                    </a>
                 </div>
                 <span>info@anim8.tech</span>
             </div>
