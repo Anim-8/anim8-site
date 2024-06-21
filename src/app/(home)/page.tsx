@@ -3,7 +3,7 @@ import Landing from "./Landing";
 import MissionStatement from "./MissionStatement";
 import Essential from "./Essential";
 import Approach from "./Approach";
-import Contact from "./Contact";
+import Connect from "./Connect";
 import Team from "./Team";
 
 const Home:NextPage = () => {
@@ -14,7 +14,7 @@ const Home:NextPage = () => {
       <Essential />
       <Approach />
       <Team />
-      <Contact />
+      <Connect />
     </>
   );
 }

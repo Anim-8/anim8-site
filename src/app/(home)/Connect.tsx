@@ -2,10 +2,10 @@ import React from 'react'
 import SubHeader from '../components/shared/SubHeader'
 import Image from 'next/image'
 
-const Contact = () => {
+const Connect = () => {
     return (
-        <div className="w-full flex flex-col items-center justify-center mt-20" id="contact">
-            <SubHeader className='mb-4'>Contact</SubHeader>
+        <div className="w-full flex flex-col items-center justify-center mt-20" id="connect">
+            <SubHeader className='mb-4'>Connect</SubHeader>
             <Image  src="/connected brains.svg" alt="connected brains" width={500} height={250} />
             <div className="flex items-center">
                 <div className='mt-2.5'>
@@ -22,4 +22,4 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default Connect
