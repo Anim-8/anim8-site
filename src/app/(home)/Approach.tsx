@@ -1,9 +1,14 @@
+
+"use client"
 import React from 'react'
 import Statement from '../components/shared/Statement'
 import SubHeader from '../components/shared/SubHeader'
 import CardData from '@/models/CardData'
 import styles from './page.module.scss'
 import Cards from './Cards'
+import { Canvas } from '@react-three/fiber'
+import { StatsGl } from '@react-three/drei'
+import BrainScene from './BrainScene'
 
 const cards: CardData[] = [
     {
@@ -41,6 +46,12 @@ const Approach = () => {
                 </p>
             </Statement>
             <Cards className='justify-center items-center' cards={cards} />
+            <div style={{ height: '70vh', width: '90%', color: 'white', background: 'black', margin: '0 auto' }}>
+                <Canvas shadows camera={{ far: 1000, near: 0.1, fov: 35, aspect: 1.3, position: [.2, -.1, 5] }}>
+                    <BrainScene />
+                    <StatsGl />
+                </Canvas>
+            </div>
         </div>
     )
 }
