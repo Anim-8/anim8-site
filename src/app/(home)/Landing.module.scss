@@ -1,0 +1,23 @@
+
+.heroContainer {
+    background-image: url('/hero background.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+
+/* Define the animation */
+@keyframes scrollBackground {
+    0% {
+      background-position-y: 0;
+    }
+    100% {
+      background-position-y: 100%;
+    }
+  }
