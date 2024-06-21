@@ -1,10 +1,15 @@
 "use client"
-import { Center, PresentationControls } from '@react-three/drei'
+import { Center, Environment, Html, PresentationControls } from '@react-three/drei'
 import React, { Suspense } from 'react'
 import LoadingSphere from '../components/shared/LoadingSphere'
 import Brain from './Brain'
+import { StringNullable } from '@/custom-types'
 
-const BrainScene = () => {
+type BrainSceneProps = {
+    onPointerEvent: (name: StringNullable) => void;
+}
+
+const BrainScene:React.FC<BrainSceneProps> = ({ onPointerEvent }) => {
     return (
         <>
             <Suspense fallback={<LoadingSphere />}>
@@ -16,10 +21,11 @@ const BrainScene = () => {
                     azimuth={[-Math.PI / 1.4, Math.PI / 2]}
                 >
                     <Center>
-                        <Brain url="/brain.glb" />
+                        <Brain url="/brain.glb" onPointerEvent={onPointerEvent} />
                     </Center>
                 </PresentationControls>
             </Suspense>
+            <Environment preset="apartment" blur={0.9} />
             <directionalLight position={[0, 4, 0]} intensity={1} />
         </>
     )
