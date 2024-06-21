@@ -6,6 +6,7 @@ const Contact = () => {
     return (
         <div className="w-full flex flex-col items-center justify-center mt-20" id="contact">
             <SubHeader className='mb-4'>Contact</SubHeader>
+            <Image  src="/connected brains.svg" alt="connected brains" width={500} height={250} />
             <div className="flex items-center">
                 <div className='mt-2.5'>
                     <a href="mailto:info@anim8.tech" rel="noreferrer">
