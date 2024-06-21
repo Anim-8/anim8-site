@@ -62,7 +62,7 @@ const Approach = () => {
             </Statement>
             <Cards className='justify-center items-center' cards={cards} />
             { name }
-            <div style={{ height: '70vh', width: '90%', color: 'white', background: 'black', margin: '0 auto' }}>
+            <div className={styles.brainContainer}>
                 <Canvas shadows camera={{ far: 100, near: 0.1, fov: 35, aspect: 1.3, position: [.2, -.1, 5] }}>
                     <BrainScene onPointerEvent={handlePointerEvent} />
                     <StatsGl />
