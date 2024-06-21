@@ -12,7 +12,7 @@ const cards: CardData[] = [
             <ul className='text-center'>
                 {
                     ["Concept and Layout", "Protocol Definition and Documentation", "Modeling and Analysis"]
-                        .map(l => <li key={l}>{l}</li>)
+                        .map(l => <li key={l} className='secondary'>{l}</li>)
                 }
             </ul>
         )
@@ -22,7 +22,7 @@ const cards: CardData[] = [
             <ul className='text-center'>
                 {
                     ["Gauge Monitoring", "Measurement Plan Management", "3D Engine", "Correlation Loops", "Customizable SPC/MSPC Alarms", "Predictive Models"]
-                        .map(l => <li key={l}>{l}</li>)
+                        .map(l => <li key={l} className='secondary'>{l}</li>)
                 }
             </ul>
         )
@@ -40,7 +40,7 @@ const Approach = () => {
                     cohesive strategy aimed at maximizing results.
                 </p>
             </Statement>
-            <Cards className='justify-center' cards={cards} />
+            <Cards className='justify-center items-center' cards={cards} />
         </div>
     )
 }
