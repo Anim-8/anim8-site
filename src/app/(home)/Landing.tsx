@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <div className={styles.heroContainer} id="animate">
         <Header className="mb-0">Animate your Business</Header>
-        <Image src="/animated brain.gif" alt="animated brain" width={700} height={700} priority quality={100}/>
+        <Image src="/animated_brain.gif" alt="animated brain" width={700} height={700} priority quality={100}/>
     </div>
   )
 }
