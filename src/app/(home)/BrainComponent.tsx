@@ -24,7 +24,7 @@ const BrainComponent:React.FC<BrainComponentProps> = ({ name, geometry, material
       onPointerEvent(name);
     }
   return (
-    <mesh 
+    <mesh
         scale={10} 
         geometry={geometry} 
         material={hovered ? hoverPhysicalMaterial : material} 

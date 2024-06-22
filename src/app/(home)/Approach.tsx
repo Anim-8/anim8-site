@@ -7,7 +7,6 @@ import CardData from '@/models/CardData'
 import styles from './page.module.scss'
 import Cards from './Cards'
 import { Canvas } from '@react-three/fiber'
-import { Center, Html, StatsGl } from '@react-three/drei'
 import BrainScene from './BrainScene'
 import { StringNullable } from '@/custom-types'
 
@@ -61,12 +60,11 @@ const Approach = () => {
                 </p>
             </Statement>
             <Cards className='justify-center items-center' cards={cards} />
-            { name }
             <div className={styles.brainContainer}>
                 <Canvas shadows camera={{ far: 100, near: 0.1, fov: 35, aspect: 1.3, position: [.2, -.1, 5] }}>
                     <BrainScene onPointerEvent={handlePointerEvent} />
-                    <StatsGl />
                 </Canvas>
+                <div className='text-center'>{name}</div>
             </div>
         </div>
     )

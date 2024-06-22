@@ -25,11 +25,12 @@
 }
 
 .brainContainer {
-    height: 50vh;
-    width: 100%;
+    height: 60vh;
+    width: 95%;
     color: white;
     background: black;
     margin: 0 auto;
+    touch-action: none;
 }
 
 @keyframes scrollBackground {
@@ -57,6 +58,9 @@
     .essentialCard {
         margin-bottom: -3rem;
     }
+    .brainContainer {
+        height: 50vh;
+    }
 }
 
 @media screen and (min-width: width("md")){
@@ -74,6 +78,12 @@
     }
     .brainContainer {
         width: 90%;
-        height: 70vh;
+        height: 80vh;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .brainContainer {
+        height: 100vh;
     }
 }
