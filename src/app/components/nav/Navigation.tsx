@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image"
 import React, { useState } from 'react'
-import styles from './navigation.module.scss'
 
 const links = ["Animate", "Business", "Our story", "Connect"]
 

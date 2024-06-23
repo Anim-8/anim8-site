@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Header from "../components/shared/Header";
-import styles from "./Landing.module.scss"
+import styles from "./page.module.scss"
 
 const Landing = () => {
   return (
