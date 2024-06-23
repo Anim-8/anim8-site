@@ -7,9 +7,9 @@ import CardData from '@/models/CardData'
 import Cards from './Cards'
 
 const cards: CardData[] = [
-    { title: "Manual", content: "A manual business is typically characterized as having many laboring and repetitive tasks. The decision making process is mostly reactionary, with no significant usage of the past to hep better comprehend the present." },
-    { title: "Automated", content: "An automated business has manual and repetitive tasks kept to a minimum. If properly done, this can lead to an increase in productivity allowing the company to expand along with a better decision-making process." },
-    { title: "Animated", content: "A business reaches the animated state when it achieves a high degree of automation, but more importantly portion a large part of the decision making process is handled by software and predictive analysis." }
+    { title: "Manual", content: <p className='secondary'>A manual business is typically characterized as having many laboring and repetitive tasks. The decision making process is mostly reactionary, with no significant usage of the past to hep better comprehend the present.</p> },
+    { title: "Automated", content: <p className='secondary'>An automated business has manual and repetitive tasks kept to a minimum. If properly done, this can lead to an increase in productivity allowing the company to expand along with a better decision-making process.</p> },
+    { title: "Animated", content: <p className='secondary'>A business reaches the animated state when it achieves a high degree of automation, but more importantly portion a large part of the decision making process is handled by software and predictive analysis.</p> }
 ]
 
 const MissionStatement = () => {
