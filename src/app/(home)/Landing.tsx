@@ -4,9 +4,11 @@ import styles from "./Landing.module.scss"
 
 const Landing = () => {
   return (
+
     <div className={styles.heroContainer} id="home">
-        <Header className="mb-0">Animate your Business</Header>
-        <Image src="/animated brain.gif" alt="animated brain" width={700} height={700} priority quality={100}/>
+        <div className={styles.leftRectangle}></div>
+        <div className={styles.rightRectangle}></div>
+        <Image src="/hero logo.png" alt="hero logo" width={700} height={700} priority quality={100} style={{ maxWidth: '50%' }}/>
     </div>
   )
 }
