@@ -22,12 +22,12 @@ const MissionStatement = () => {
                     <InputRange value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(Number(e.target.value))} min="0" max="100" />
                 </div>
                 <p className='mt-10'>
-                Now what do we mean by Animate? Most are familiar with the automating representing the transition 
-                from manual tasks to automated work, but we introduce the "animation" to 
-                describe the transition from automated work to animated. Here are the three states:
+                    Now what do we mean by Animate? Most are familiar with the automating representing the transition
+                    from manual tasks to automated work, but we introduce the "animation" to
+                    describe the transition from automated work to animated. Here are the three states:
                 </p>
             </Statement>
-                <Cards cards={cards} animated={value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title} />
+            <Cards cards={cards} animated={value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title} />
         </div>
     )
 }

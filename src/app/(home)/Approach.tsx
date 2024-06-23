@@ -1,14 +1,9 @@
 
-"use client"
-import React, { useCallback, useState } from 'react'
 import Statement from '../components/shared/Statement'
 import SubHeader from '../components/shared/SubHeader'
 import CardData from '@/models/CardData'
 import styles from './page.module.scss'
 import Cards from './Cards'
-import { Canvas } from '@react-three/fiber'
-import BrainScene from './BrainScene'
-import { StringNullable } from '@/custom-types'
 
 const cards: CardData[] = [
     {
@@ -35,20 +30,6 @@ const cards: CardData[] = [
 ]
 
 const Approach = () => {
-    const [name, setName] = useState<StringNullable>(null)
-    const handlePointerEvent = useCallback((name: StringNullable) => {
-        if (!name) setName(name)
-        else {
-            let n;
-            if (name.includes("Allen")) {
-                n = name.split("Allen")[1].split("_").slice(1, -1).map(n => n[0].toUpperCase() + n.slice(1)).join(" ")
-            } else {
-                n = name.split("_").map(n => n[0].toUpperCase() + n.slice(1)).join(" ")
-            }
-            setName(n)
-        }
-    }, [])
-
     return (
         <div className={styles.approach} id="approach">
             <Statement>
@@ -60,12 +41,6 @@ const Approach = () => {
                 </p>
             </Statement>
             <Cards className='justify-center items-center' cards={cards} />
-            <div className={styles.brainContainer}>
-                <Canvas shadows camera={{ far: 100, near: 0.1, fov: 35, aspect: 1.3, position: [.2, -.1, 5] }}>
-                    <BrainScene onPointerEvent={handlePointerEvent} />
-                </Canvas>
-                <div className='text-center'>{name}</div>
-            </div>
         </div>
     )
 }
