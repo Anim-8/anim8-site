@@ -9,7 +9,7 @@ type CardsProps = {
     className?: string;
 }
 
-const Cards = memo(({ cards, animated = "", className = "" }: CardsProps) => {
+const Cards:React.FC<CardsProps> = memo(({ cards, animated = "", className = "" }) => {
     return (
         <div className={`flex w-full flex-col lg:flex-row ${className}`}>
             {cards.map(card => (
@@ -20,5 +20,7 @@ const Cards = memo(({ cards, animated = "", className = "" }: CardsProps) => {
         </div>
     )
 })
+
+Cards.displayName = "Cards"
 
 export default Cards

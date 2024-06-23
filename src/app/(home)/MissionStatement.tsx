@@ -23,7 +23,7 @@ const MissionStatement = () => {
                 </div>
                 <p className='mt-10'>
                     Now what do we mean by Animate? Most are familiar with the automating representing the transition
-                    from manual tasks to automated work, but we introduce the "animation" to
+                    from manual tasks to automated work, but we introduce the &quot;animation&quot; to
                     describe the transition from automated work to animated. Here are the three states:
                 </p>
             </Statement>
