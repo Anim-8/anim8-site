@@ -2,9 +2,10 @@
 import SubHeader from '../components/shared/SubHeader'
 import Statement from '../components/shared/Statement'
 import InputRange from '../components/shared/InputRange'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import CardData from '@/models/CardData'
 import Cards from './Cards'
+import useDimensions from '@/hooks/useDimensions'
 
 const cards: CardData[] = [
     { title: "Manual", content: <p className='secondary'>A manual business is typically characterized as having many laboring and repetitive tasks. The decision making process is mostly reactionary, with no significant usage of the past to hep better comprehend the present.</p> },
@@ -13,9 +14,11 @@ const cards: CardData[] = [
 ]
 
 const MissionStatement = () => {
+    const ref = useRef<any>()
+    const { width } = useDimensions(ref)
     const [value, setValue] = useState<number>(50)
     return (
-        <div className="w-full text-center">
+        <div className="w-full text-center" ref={ref}>
             <Statement id="quality">
                 <SubHeader className='mt-20 mb-5'>Animate</SubHeader>
                 <div className="mb-4 px-5">
@@ -27,7 +30,7 @@ const MissionStatement = () => {
                     describe the transition from automated work to animated. Here are the three states:
                 </p>
             </Statement>
-            <Cards cards={cards} animated={value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title} />
+            <Cards cards={cards} animated={value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title}/>
         </div>
     )
 }

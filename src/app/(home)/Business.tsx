@@ -6,7 +6,7 @@ import Statement from '../components/shared/Statement'
 import SubHeader from '../components/shared/SubHeader'
 import CardData from '@/models/CardData'
 import BusinessRow from './BusinessRow'
-import useDimensions from '@/hooks/useDImensions'
+import useDimensions from '@/hooks/useDimensions'
 import { useRef } from 'react'
 import Cards from './Cards'
 
@@ -39,7 +39,6 @@ const hoverConfig = { y: -50, scale: 1.1 }
 const Business = () => {
     const ref = useRef<any>()
     const { width } = useDimensions(ref)
-    console.log(width)
     return (
         <div className='mt-10 lg:mt-0 w-full'>
             <Statement>
