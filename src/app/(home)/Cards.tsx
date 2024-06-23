@@ -1,5 +1,5 @@
 import CardData from '@/models/CardData'
-import React from 'react'
+import React, { memo } from 'react'
 import HexCard from '../components/shared/HexCard';
 import styles from './page.module.scss'
 
@@ -9,7 +9,7 @@ type CardsProps = {
     className?: string;
 }
 
-const Cards = ({ cards, animated = "", className = "" }: CardsProps) => {
+const Cards = memo(({ cards, animated = "", className = "" }: CardsProps) => {
     return (
         <div className={`flex w-full flex-col lg:flex-row ${className}`}>
             {cards.map(card => (
@@ -19,6 +19,6 @@ const Cards = ({ cards, animated = "", className = "" }: CardsProps) => {
             ))}
         </div>
     )
-}
+})
 
 export default Cards
