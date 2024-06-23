@@ -1,5 +1,6 @@
 "use client"
 
+import { alphanumeric } from "@/custom-types";
 import { Merriweather } from "next/font/google";
 const merriweather = Merriweather({ subsets: ["latin"], weight: "400" });
 
@@ -7,11 +8,13 @@ type HexCardProps = {
     title: string;
     content: React.ReactNode;
     isAnimated?: boolean;
+    width?: alphanumeric;
+    height?: alphanumeric;
 }
 
-const HexCard = ({ title, content, isAnimated = false }: HexCardProps) => {
+const HexCard = ({ title, content, isAnimated = false, width = "100%", height = "435" }: HexCardProps) => {
     return (
-        <svg width="100%" height="435" viewBox="0 0 435 435" fill="none" xmlns="http://www.w3.org/2000/svg" transform={`scale(${isAnimated ? 1.1 : 1})`}>
+        <svg width={width} height={height} viewBox="0 0 435 435" fill="none" xmlns="http://www.w3.org/2000/svg" transform={`scale(${isAnimated ? 1.1 : 1})`}>
             <g filter="url(#filter0_f_172_1019)">
                 <path d="M100.893 100.893L217.5 52.5925L334.108 100.893L382.408 217.5L334.108 334.107L217.5 382.408L100.893 334.107L52.593 217.5L100.893 100.893Z" stroke="#A8C8C0" strokeOpacity="0.9" />
             </g>
