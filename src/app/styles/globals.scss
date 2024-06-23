@@ -57,7 +57,7 @@ h1, h3 {
 input[type="range"]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
   border-radius:10px;
-  box-shadow:0px 0px 3px 3px gainsboro;
+  box-shadow:0px 0px 3px 3px whitesmoke;
   background: linear-gradient(to right,$color-wheel-red, $color-wheel-orange, $color-wheel-yellow, $color-wheel-green);
   height: 7.5px;
 }
@@ -68,70 +68,19 @@ input[type="range"]::-moz-range-track {
   -moz-appearance: none;
   background: rgba(59, 173, 227, 1);
   background: -moz-linear-gradient(45deg,$color-wheel-red 0%,$color-wheel-orange 25%,$color-wheel-yellow 51%,$color-wheel-green 100%);
-  background: -webkit-gradient(
-    left bottom,
-    right top,
-    color-stop(0%, $color-wheel-red),
-    color-stop(25%, $color-wheel-orange),
-    color-stop(51%, $color-wheel-yellow),
-    color-stop(100%, $color-wheel-green)
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    $color-wheel-red 0%,
-    $color-wheel-orange 25%,
-    $color-wheel-yellow 51%,
-    $color-wheel-green 100%
-  );
-  background: -o-linear-gradient(
-    45deg,
-    $color-wheel-red 0%,
-    $color-wheel-orange 25%,
-    $color-wheel-yellow 51%,
-    $color-wheel-green 100%
-  );
-  background: -ms-linear-gradient(
-    45deg,
-    $color-wheel-red 0%,
-    $color-wheel-orange 25%,
-    $color-wheel-yellow 51%,
-    $color-wheel-green 100%
-  );
-  background: linear-gradient(
-    45deg,
-    $color-wheel-red 0%,
-    $color-wheel-orange 25%,
-    $color-wheel-yellow 51%,
-    $color-wheel-green 100%
-  );
+  background: linear-gradient(45deg, $color-wheel-red 0%, $color-wheel-orange 25%, $color-wheel-yellow 51%, $color-wheel-green 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
   height: 2px;
 }
 input[type="range"]::-webkit-slider-thumb {
+  @include input-slider-thumb;
   -webkit-appearance: none;
-  border: 2px solid;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  max-width: 80px;
-  position: relative;
-  bottom: 7px;
-  background-color: white;
   cursor: -webkit-grab;
--webkit-transition: border 1000ms ease;
-  transition: border 1000ms ease;
+  -webkit-transition: border 1000ms ease;
 }
 input[type="range"]::-moz-range-thumb {
+  @include input-slider-thumb;
   -moz-appearance: none;
-  border: 2px solid;
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  max-width: 80px;
-  position: relative;
-  bottom: 11px;
-  background-color: #1d1c25;
   cursor: -moz-grab;
   -moz-transition: border 1000ms ease;
-  transition: border 1000ms ease;
 }
