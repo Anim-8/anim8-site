@@ -5,15 +5,16 @@ import styles from './page.module.scss'
 
 type CardsProps = {
     cards: CardData[];
+    animated?: string;
     className?: string;
 }
 
-const Cards = ({ cards, className = "" }: CardsProps) => {
+const Cards = ({ cards, animated = "", className = "" }: CardsProps) => {
     return (
         <div className={`flex w-full flex-col lg:flex-row ${className}`}>
             {cards.map(card => (
                 <div key={card.title} className={`lg:basis-1/3 ${styles.essentialCard}`}>
-                    <HexCard title={card.title} content={card.content} />
+                    <HexCard title={card.title} content={card.content} isAnimated={card.title === animated}/>
                 </div>
             ))}
         </div>
