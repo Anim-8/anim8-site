@@ -21,7 +21,13 @@ const MissionStatement = () => {
         <div className="w-full text-center" ref={ref}>
             <Statement id="quality">
                 <SubHeader className='mt-20 mb-5'>Animate</SubHeader>
-                <div className="mb-4 px-5">
+                <div className='p-3'> Our goal is to help your company go up the animation spectrum. </div>
+                <div className="max-w-screen-l flex flex-wrap items-center justify-between mx-auto p-3">
+                    <div className='text-2xl'> Manual </div>
+                    <div className='text-2xl'> Automated </div>
+                    <div className='text-2xl'> Animated </div>
+                </div>
+                <div className="mb-4 px-5 ">
                     <InputRange value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(Number(e.target.value))} min="0" max="100" />
                 </div>
                 <p className='mt-10'>
