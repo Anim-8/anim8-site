@@ -10,7 +10,7 @@ const Team = () => {
             <Statement>
                 <SubHeader className='mb-4'>Team</SubHeader>
                 <div className='w-full flex flex-col justify-center items-center text-center '>
-                    <Image src="/brains.webp" alt='brains.webp' height={892} width={464} />
+                    <Image src="/brains_optimized.webp" alt='brains.webp' height={892} width={464} />
                     <p className='mt-10'>
                         With a wealth of experience in process and quality control within the automotive sector,
                         our team stands as industry trailblazers. We aim to revolutionize traditional practices in some
