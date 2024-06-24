@@ -2,7 +2,7 @@
 import SubHeader from '../components/shared/SubHeader'
 import Statement from '../components/shared/Statement'
 import InputRange from '../components/shared/InputRange'
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import CardData from '@/models/CardData'
 import Cards from './Cards'
 import styles from "./page.module.scss"
@@ -18,6 +18,7 @@ const MissionStatement: React.FC = () => {
     const ref = useRef<any>()
     const { width } = useDimensions(ref)
     const [value, setValue] = useState<number>(50)
+    const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
         <div className="w-full text-center" ref={ref}>
             <Statement id="quality">
@@ -45,7 +46,12 @@ const MissionStatement: React.FC = () => {
                     describe the transition from automated work to animated. Here are the three states:
                 </p>
             </Statement>
-            <Cards cards={cards} animated={value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title} />
+            <Cards 
+                cards={cards} 
+                animated={width < 430 ? "" : value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title} 
+                width={aspect} 
+                height={aspect}
+            />
         </div>
     )
 }

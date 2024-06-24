@@ -7,7 +7,7 @@ import SubHeader from '../components/shared/SubHeader'
 import CardData from '@/models/CardData'
 import BusinessRow from './BusinessRow'
 import useDimensions from '@/hooks/useDimensions'
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import Cards from './Cards'
 
 const cards: CardData[] = [
@@ -39,6 +39,7 @@ const hoverConfig = { y: -50, scale: 1.1 }
 const Business = () => {
     const ref = useRef<any>()
     const { width } = useDimensions(ref)
+    const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
         <div className='mt-10 lg:mt-0 w-full'>
             <Statement>
@@ -60,7 +61,7 @@ const Business = () => {
                                 className='lg:basis-1/3 flex justify-center'
                                 whileHover={hoverConfig}
                             >
-                                <HexCard title={cards[0].title} content={cards[0].content} />
+                                <HexCard title={cards[0].title} content={cards[0].content} width={aspect} height={aspect} />
                             </motion.div>
                             <div className="lg:basis-1/3 flex justify-center">
                                 <Image src="/body.webp" alt="body.webp" width={165} height={372} />
@@ -69,10 +70,10 @@ const Business = () => {
                                 className='lg:basis-1/3 flex justify-center'
                                 whileHover={hoverConfig}
                             >
-                                <HexCard title={cards[1].title} content={cards[1].content} />
+                                <HexCard title={cards[1].title} content={cards[1].content} width={aspect} height={aspect} />
                             </motion.div>
                         </div>
-                    ) : <Cards cards={cards} />
+                    ) : <Cards cards={cards} width={aspect} height={aspect} />
                }
             </div>
         </div>

@@ -17,7 +17,7 @@ const Cards:React.FC<CardsProps> = memo(({ cards, width, height, animated = "", 
     return (
         <div className={`flex w-full flex-col lg:flex-row ${className}`}>
             {cards.map(card => (
-                <motion.div key={card.title} className={`lg:basis-1/3 ${styles.essentialCard} flex justify-center`} animate={{scale: animated === card.title ? 1.1 : 1}}>
+                <motion.div key={card.title} className={`lg:basis-1/3 flex justify-center`} animate={{scale: animated === card.title ? 1.1 : 1}}>
                     <HexCard 
                         title={card.title} 
                         content={card.content} 
