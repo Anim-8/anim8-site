@@ -18,7 +18,7 @@ const Team = () => {
                         Following the body and brain model, we started with the body. We designed, built, and commissioned revolutionary systems and functional blocks to change the paradigm in the way metrology and manufacturing data aggregation is done. We then connected the body to the brain (software) by building a set of data pipelines which we referred to as the nervous system. This well-designed equipment layer, combined with sophisticated software, unlocked an unprecedented level of automation and added value in terms of data quantity and quality, leading to some of the highest cost-saving initiatives in the company.
                     </p>
                     <p>
-                        On top of this architecture, we started adding statistical tools and methods to animate the decision-making process and improve our ability to anticipate events before they happen. We've now made the decision to embark on our own journey and start this company. Our intention is to use the same methods to help other companies achieve the same degree of automation and push it even further so they can experience a significant improvement in efficiency.
+                        On top of this architecture, we started adding statistical tools and methods to animate the decision-making process and improve our ability to anticipate events before they happen. We&apos;ve now made the decision to embark on our own journey and start this company. Our intention is to use the same methods to help other companies achieve the same degree of automation and push it even further so they can experience a significant improvement in efficiency.
                     </p>
                 </div>
             </Statement>

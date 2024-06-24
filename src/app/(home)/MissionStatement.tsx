@@ -5,8 +5,7 @@ import InputRange from '../components/shared/InputRange'
 import { useMemo, useRef, useState } from 'react'
 import CardData from '@/models/CardData'
 import Cards from './Cards'
-import styles from "./page.module.scss"
-import useDimensions from '@/hooks/useDimensions'
+import useDimensions from '../../hooks/useDImensions'
 
 const cards: CardData[] = [
     { title: "Manual", content: <p className='secondary'>A manual business is typically characterized as having many laboring and repetitive tasks. The decision making process is mostly reactionary, with no significant usage of the past to hep better comprehend the present.</p> },

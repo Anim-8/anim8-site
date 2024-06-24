@@ -6,7 +6,7 @@ import Statement from '../components/shared/Statement'
 import SubHeader from '../components/shared/SubHeader'
 import CardData from '@/models/CardData'
 import BusinessRow from './BusinessRow'
-import useDimensions from '@/hooks/useDimensions'
+import useDimensions from '../../hooks/useDImensions'
 import { useMemo, useRef } from 'react'
 import Cards from './Cards'
 import styles from "./page.module.scss"
