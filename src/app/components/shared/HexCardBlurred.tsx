@@ -20,6 +20,7 @@ const HexCardBlurred = ({ title, content, isAnimated = false, width = "100%", he
     <g filter="url(#filter1_f_172_1019)">
         <path d="M156.975 64.2076L283.096 66.3087L370.792 156.976L368.691 283.097L278.024 370.792L151.903 368.691L64.2072 278.024L66.3083 151.903L156.975 64.2076Z" stroke="#A8C8C0" strokeOpacity="0.9" />
     </g>
+    <ellipse cx="217.5" cy="217" rx="153.5" ry="151" fill="url(#paint0_radial_294_4)" fillOpacity="0.5" />
     <ellipse cx="217.5" cy="217" rx="153.5" ry="151" fill="url(#paint0_radial_172_1019)" />
     <text fontSize={20} className={merriweather.className} x="50%" y="28%" dominantBaseline="middle" textAnchor="middle" fill="#FFF7DE">{title}</text>
     <foreignObject fontSize={14} className={merriweather.className} x="18%" y="35%" width={275} height={150} dominantBaseline="middle" textAnchor="middle" fill="#FFF7DE" color="#FFF7DE">
@@ -36,10 +37,10 @@ const HexCardBlurred = ({ title, content, isAnimated = false, width = "100%", he
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
             <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_172_1019" />
         </filter>
-        <radialGradient id="paint0_radial_172_1019" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(217.5 217) rotate(-21.8) scale(213.396 210.887)">
-            <stop stopColor="#52625E" />
+        {/* <radialGradient id="paint0_radial_172_1019" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(217.5 217) rotate(-21.8) scale(213.396 210.887)">
+            <stop stopColor="#72F5E7" stopOpacity="0.6"/>
             <stop offset="1" stopColor="#A8C8C0" stopOpacity="0" />
-        </radialGradient>
+        </radialGradient> */}
     </defs>
 </svg>
 

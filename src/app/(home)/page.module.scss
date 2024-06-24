@@ -55,12 +55,11 @@
     z-index: -1;
   }
 
-
   .greyCircle {
     display: flex; /* Use flexbox to align the inner black circles */
     justify-content: space-around; /* Space the inner circles evenly */
     align-items: center; /* Center the inner circles vertically */
-    width: 100vw; /* Set the width of the circle */
+    width: 100%; /* Set the width of the circle */
     height: 5vh; /* Set the height of the circle */
     background-color: #D9D9D9; /* Set the background color to grey */
     border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
@@ -83,6 +82,13 @@
     filter: blur(5px); /* Add a blur effect to the shadow */
     border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
     z-index: 10;
+  }
+
+  .connectedGif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
   }
   
 

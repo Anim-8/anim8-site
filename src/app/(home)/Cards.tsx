@@ -1,9 +1,8 @@
 import CardData from '@/models/CardData'
 import React, { memo } from 'react'
-import HexCard from '../components/shared/HexCard';
-import styles from './page.module.scss'
 import { alphanumeric } from '@/custom-types';
 import { motion } from 'framer-motion';
+import HexCard from '../components/shared/HexCard';
 
 type CardsProps = {
     cards: CardData[];

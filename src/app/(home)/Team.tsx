@@ -8,7 +8,7 @@ const Team = () => {
     return (
         <div className={styles.approach} id="our-story">
             <Statement>
-                <SubHeader className='mb-4'>Team</SubHeader>
+                <SubHeader className='mb-4'>Our Story</SubHeader>
                 <div className='w-full flex flex-col justify-center items-center text-center '>
                     <Image src="/brains_optimized.webp" alt='brains.webp' height={892} width={464} />
                     <p className='mt-10'>
