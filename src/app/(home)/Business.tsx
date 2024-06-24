@@ -37,8 +37,8 @@ const cards: CardData[] = [
 ]
 
 const descriptions = {
-    descriptionOne: "Certain type of software solutions are heavily reliant on the resources that produces value. Our team is highly interdisciplinary and also offer a set of engineering solutions to ensure that you have the right infrastructure in place for optimal growth. ",
-    descriptionTwo: "Our main focus is around helping you build the brain of your enterprise.  Our current set of expertise and tools focuses  on the following sectors."
+    descriptionOne: "Our team is highly interdisciplinary and offers a set of engineering solutions to ensure that you have the right infrastructure in place for optimal growth.",
+    descriptionTwo: "The main focus of Anim8 is centered around building the brain of your enterprise. Our set of expertise and tools dials in on the following sectors."
 }
 
 const hoverConfig = { y: -50, scale: 1.1 }
@@ -51,10 +51,10 @@ const Business = () => {
         <div className='mt-10 lg:mt-0 w-full' id="business">
             <Statement>
                 <SubHeader className='mb-4'>Business</SubHeader>
-                <p className='text-sm'>
+                <p>
                     We believe that simple ideas are the most powerful, so we personify businesses into a model that we call the brain and body. The brain and nervous system represent the software,
                     storage and data pipelines of the business and the body represents the people, equipment and real-estate.
-                    Unlike the current Saas industry, we unify the brain and body to avoid pricy cookie-cutter solutions that don&apos;t truly meet
+                    Unlike the current Saas industry, we unify the brain and body to avoid pricy cookie-cutter solutions that don&apos;t fully meet
                     the needs of you business and are difficult to integrate with.
                 </p>
 
@@ -63,6 +63,7 @@ const Business = () => {
                 <BusinessRow url="/brain.webp" headerOne='Body' descriptionOne={descriptions.descriptionOne} headerTwo='Brain' descriptionTwo={descriptions.descriptionTwo} />
                 {
                     width >= 768 ? (
+                        <>
                         <div className='flex flex-row text-center items-center'>
                             <motion.div
                                 className='lg:basis-1/3 flex justify-center'
@@ -81,13 +82,14 @@ const Business = () => {
                                 <HexCardBlurred title={cards[1].title} content={cards[1].content} width={aspect} height={aspect} />
                             </motion.div>
                         </div>
-                    ) : <Cards cards={cards} width={aspect} height={aspect} />
-               }
                <div className={styles.greyCircle}>
                 <div className={styles.orbShadow}></div>
                 <div className={styles.bodyShadow}></div>
                 <div className={styles.orbShadow}></div>
                </div>
+                        </>
+                    ) : <Cards cards={cards} width={aspect} height={aspect} />
+               }
             </div>
         </div>
     )
