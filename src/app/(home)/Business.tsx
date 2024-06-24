@@ -38,7 +38,7 @@ const cards: CardData[] = [
 
 const descriptions = {
     descriptionOne: "Our team is highly interdisciplinary and offers a set of engineering solutions to ensure that you have the right infrastructure in place for optimal growth.",
-    descriptionTwo: "The main focus of Anim8 is centered around building the brain of your enterprise. Our set of expertise and tools focuses on the following sectors."
+    descriptionTwo: "The main focus of Anim8 is centered around building the brain of your enterprise. Our set of expertise and tools dials in on the following sectors."
 }
 
 const hoverConfig = { y: -50, scale: 1.1 }
