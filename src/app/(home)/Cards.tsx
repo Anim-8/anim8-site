@@ -1,23 +1,34 @@
 import CardData from '@/models/CardData'
-import React from 'react'
+import React, { memo } from 'react'
+import { alphanumeric } from '@/custom-types';
+import { motion } from 'framer-motion';
 import HexCard from '../components/shared/HexCard';
-import styles from './page.module.scss'
 
 type CardsProps = {
     cards: CardData[];
+    animated?: string;
     className?: string;
+    width?: alphanumeric;
+    height?: alphanumeric;
 }
 
-const Cards = ({ cards, className = "" }: CardsProps) => {
+const Cards:React.FC<CardsProps> = memo(({ cards, width, height, animated = "", className = "" }) => {
     return (
         <div className={`flex w-full flex-col lg:flex-row ${className}`}>
             {cards.map(card => (
-                <div key={card.title} className={`lg:basis-1/3 ${styles.essentialCard}`}>
-                    <HexCard title={card.title} content={card.content} />
-                </div>
+                <motion.div key={card.title} className={`lg:basis-1/3 flex justify-center`} animate={{scale: animated === card.title ? 1.1 : 1}}>
+                    <HexCard 
+                        title={card.title} 
+                        content={card.content} 
+                        width={width}
+                        height={height}
+                    />
+                </motion.div>
             ))}
         </div>
     )
-}
+})
+
+Cards.displayName = "Cards"
 
 export default Cards

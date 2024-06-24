@@ -1,11 +1,12 @@
 import Image from "next/image"
-import Header from "../components/shared/Header";
+import styles from "./Landing.module.scss"
 
 const Landing = () => {
   return (
-    <div className="w-full text-center flex flex-col items-center mt-4" id="home">
-      <Header className="mb-0">Animate your Factory</Header>
-      <Image src="/brain.webp" alt="brain.webp" width={700} height={700} priority quality={100}/>
+    <div className={styles.heroContainer} id="home">
+        <div className={styles.leftRectangle}></div>
+        <div className={styles.rightRectangle}></div>
+        <Image src="/frame 4.webp" alt="hero logo" width={700} height={700} priority quality={100} style={{ maxWidth: '70%', marginTop: '8%'}}/>
     </div>
   )
 }
