@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${merriweather.className} theme-dark`}>
         <Navigation />
-        <main className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">{children}</main>
+        <main className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">{children}</main>
         <Footer />
       </body>
     </html>
