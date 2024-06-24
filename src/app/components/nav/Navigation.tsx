@@ -1,9 +1,14 @@
 "use client"
-import { color } from "framer-motion"
+import KeyValuePair from "@/models/KeyValuePair"
 import Image from "next/image"
 import React, { useState } from 'react'
 
-const links = ["Animate", "Business", "Our story", "Connect"]
+const links:KeyValuePair[] = [
+    {key: "Animate", value: "animate"},
+    {key: "Business", value: "business"},
+    {key: "Our Story", value: "Our-story"},
+    {key: "Connect", value: "connect"}
+]
 
 const Navigation: React.FC = () => {
     const [show, setShow] = useState<boolean>(false)
@@ -24,9 +29,9 @@ const Navigation: React.FC = () => {
                 <div className={`items-center justify-center w-full md:flex md:w-auto md:order-1 ${!show && "hidden"}`} id="navbar-sticky">
                     <ul className="items-center justify-center flex flex-col p-4 md:p-0 mt-4 z-10  font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" style={{background: 'none'}}>
                         {
-                            links.map(link => <li key={link}>
-                                <a href={`#${link.toLowerCase()}`} className="secondary block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                                    { link }
+                            links.map(link => <li key={link.key}>
+                                <a href={`#${link.value.toLowerCase()}`} className="secondary block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                    { link.key }
                                 </a>
                             </li>)
                         }

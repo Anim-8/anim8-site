@@ -21,7 +21,7 @@ const MissionStatement: React.FC = () => {
     const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
         <div className="w-full text-center" ref={ref}>
-            <Statement id="quality">
+            <Statement id="animate">
                 <div className="relative inline-block text-center">
                     <SubHeader className='mt-20 mb-5 z-10'>Animate</SubHeader>
                 </div>

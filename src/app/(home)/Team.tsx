@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Team = () => {
     return (
-        <div className={styles.approach} id="team">
+        <div className={styles.approach} id="our-story">
             <Statement>
                 <SubHeader className='mb-4'>Team</SubHeader>
                 <div className='w-full flex flex-col justify-center items-center text-center '>

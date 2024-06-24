@@ -41,7 +41,7 @@ const Business = () => {
     const { width } = useDimensions(ref)
     const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
-        <div className='mt-10 lg:mt-0 w-full'>
+        <div className='mt-10 lg:mt-0 w-full' id="business">
             <Statement>
                 <SubHeader className='mb-4'>Business</SubHeader>
                 <p>

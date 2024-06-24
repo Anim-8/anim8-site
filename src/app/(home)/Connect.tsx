@@ -15,9 +15,6 @@ const Connect = () => {
                 </div>
                 <span>info@anim8.tech</span>
             </div>
-            <div className='mt-10 text-center'>
-                More contact information will be added shortly.
-            </div>
         </div>
     )
 }
