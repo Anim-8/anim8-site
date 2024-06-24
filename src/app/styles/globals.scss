@@ -42,13 +42,15 @@ h1, h3 {
   color: $secondary !important;
 }
 
-
+.special {
+  color: $special !important;
+}
 
 // credit https://medium.com/@manoj10101996/customize-your-input-range-slider-into-gradient-slider-without-any-external-stylesheet-be8d6ec224ce
 .range {
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: block;
   margin-top: 35px;
