@@ -10,6 +10,7 @@ import useDimensions from '@/hooks/useDimensions'
 import { useMemo, useRef } from 'react'
 import Cards from './Cards'
 import styles from "./page.module.scss"
+import HexCardBlurred from '../components/shared/HexCardBlurred'
 
 const cards: CardData[] = [
     {
@@ -77,7 +78,7 @@ const Business = () => {
                                 className='lg:basis-1/3 flex justify-center'
                                 whileHover={hoverConfig}
                             >
-                                <HexCard title={cards[1].title} content={cards[1].content} width={aspect} height={aspect} />
+                                <HexCardBlurred title={cards[1].title} content={cards[1].content} width={aspect} height={aspect} />
                             </motion.div>
                         </div>
                     ) : <Cards cards={cards} width={aspect} height={aspect} />
