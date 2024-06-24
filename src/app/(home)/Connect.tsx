@@ -11,8 +11,8 @@ const Connect = () => {
                 <Image  src="/connected_brains.webp" alt="connected brains" width={500} height={250} />
                 {/* <img src="connected.gif" alt="GIF" className={styles.connectedGif}/> */}
             </div>
-            <p className='mt-10'>
-                Ready to get started on your animation journey ? Feel free to reach out to us through email at: 
+            <p>
+                Ready to get started on your <strong> Animation </strong> journey? Feel free to reach out to us through email at: 
             </p>
             <div className="px-4 flex items-center">
                 <div className='mt-2.5'>
