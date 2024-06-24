@@ -25,7 +25,7 @@ const MissionStatement: React.FC = () => {
                 <div className="relative inline-block text-center">
                     <SubHeader className='mt-20 mb-5 z-10'>Animate</SubHeader>
                 </div>
-                <div className='p-4'>Our goal is to help your company go up the animation spectrum.</div>
+                <div className='secondary p-4'>Our goal is to help your company go up the animation spectrum.</div>
                 <div className='max-w-screen-l flex flex-col mx-8 p-3'>
                     {
                         width >= 600 && (
@@ -40,7 +40,7 @@ const MissionStatement: React.FC = () => {
                         <InputRange value={value} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValue(Number(e.target.value))} min="0" max="100" />
                     </div>
                 </div>
-                <p className='mt-10'>
+                <p className='secondary mt-10'>
                     Now what do we mean by Animate? Most are familiar with the automating representing the transition
                     from manual tasks to automated work, but we introduce the &quot;animation&quot; to
                     describe the transition from automated work to animated. Here are the three states:

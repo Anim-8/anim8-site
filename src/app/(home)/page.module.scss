@@ -1,5 +1,10 @@
 @import '../styles/abstracts.scss';
 
+
+.essentialCard {
+    margin-bottom: -4rem;
+}
+
 .sectionSeparator {
     margin-top: 5rem;
 }
@@ -18,6 +23,69 @@
     touch-action: none;
 }
 
+.whiteCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; /* Adjust the size as needed */
+    height: 10px; /* Adjust the size as needed */
+    background-color: radial-gradient(to right, #ffffff, #ffffff00);
+    border-radius: 70%;
+    z-index: -1; /* Ensures the circle is behind the heading */
+  }
+
+  .brainGlow {
+    position: absolute;
+    width: 10vw; /* Set the width of the circle */
+    height: 20vh; /* Set the height of the circle */
+    background: radial-gradient(circle, #72F5E7, #72f5e800); /* Set the background color to grey */
+    filter: blur(5px); /* Add a blur effect to the shadow */
+    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
+    z-index: -1;
+  }
+  
+  .bodyGlow {
+    position: absolute;
+    width: 10vw; /* Set the width of the circle */
+    height: 40vh; /* Set the height of the circle */
+    background: radial-gradient(circle, #72F5E7, #72f5e800); /* Set the background color to grey */
+    filter: blur(5px); /* Add a blur effect to the shadow */
+    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
+    z-index: -1;
+  }
+
+
+  .greyCircle {
+    display: flex; /* Use flexbox to align the inner black circles */
+    justify-content: space-around; /* Space the inner circles evenly */
+    align-items: center; /* Center the inner circles vertically */
+    width: 100vw; /* Set the width of the circle */
+    height: 5vh; /* Set the height of the circle */
+    background-color: #D9D9D9; /* Set the background color to grey */
+    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
+    z-index: 10;
+  }
+
+  .orbShadow {
+    width: 20vw; /* Set the width of the circle */
+    height: 3vh; /* Set the height of the circle */
+    background: radial-gradient(circle, #000000, #00000000); /* Set the background color to grey */
+    filter: blur(5px); /* Add a blur effect to the shadow */
+    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
+    z-index: 10;
+  }
+
+  .bodyShadow {
+    width: 10vw; /* Set the width of the circle */
+    height: 2vh; /* Set the height of the circle */
+    background: radial-gradient(circle, #000000, #00000000);; /* Set the background color to grey */
+    filter: blur(5px); /* Add a blur effect to the shadow */
+    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
+    z-index: 10;
+  }
+  
+
 @keyframes scrollBackground {
     0% {
       background-position-y: 0;
@@ -25,9 +93,24 @@
     100% {
       background-position-y: 100%;
     }
+  }
+
+@media screen and (min-width: 300px) {
+    .essentialCard {
+        margin-bottom: -12rem;
+    }
+}
+
+@media screen and (min-width: 350px) {
+    .essentialCard {
+        margin-bottom: -5rem;
+    }
 }
 
 @media screen and (min-width: 460px) {
+    .essentialCard {
+        margin-bottom: -3rem;
+    }
     .brainContainer {
         height: 50vh;
     }
@@ -40,6 +123,9 @@
 }
 
 @media screen and (min-width: width("lg")) {
+    .essentialCard {
+        margin-bottom: 0;
+    }
     .approach {
         margin-top: 2rem;
     }
