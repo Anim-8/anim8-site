@@ -60,7 +60,7 @@ const Business = () => {
 
             </Statement>
             <div className='flex flex-col w-full' ref={ref}>
-                <BusinessRow url="/brain.webp" headerOne='Body' descriptionOne={descriptions.descriptionOne} headerTwo='Brain' descriptionTwo={descriptions.descriptionTwo} />
+                <BusinessRow url="/brainBody.webp" headerOne='Body' descriptionOne={descriptions.descriptionOne} headerTwo='Brain' descriptionTwo={descriptions.descriptionTwo} />
                 {
                     width >= 768 ? (
                         <div className='flex flex-row text-center items-center'>
@@ -72,7 +72,6 @@ const Business = () => {
                             </motion.div>
                             <div className="lg:basis-1/3 flex justify-center">
                                 <Image src="/body.webp" alt="body.webp" width={165} height={372} />
-                                <div className={styles.bodyGlow}></div>
                             </div>
                             <motion.div
                                 className='lg:basis-1/3 flex justify-center'
