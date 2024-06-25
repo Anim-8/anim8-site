@@ -45,7 +45,7 @@ const Business = () => {
     return (
         <div className='mt-10 lg:mt-0 w-full' id="business">
             <Statement>
-                <SubHeader className='mb-4 py-8'>Business</SubHeader>
+                <SubHeader className='mb-4 pt-8'>Business</SubHeader>
                 <p className='text-sm'>
                     We believe that simple ideas are the most powerful, so we personify businesses into a model that we call the brain and body. The brain and nervous system represent the software,
                     storage and data pipelines of the business and the body represents the people, equipment and real-estate.
