@@ -37,8 +37,8 @@
 
   .brainGlow {
     position: absolute;
-    width: 10vw; /* Set the width of the circle */
-    height: 20vh; /* Set the height of the circle */
+    height: 15%; /* Set the height of the circle */
+    width: 10%; /* Set the width of the circle */
     background: radial-gradient(circle, #72F5E7, #72f5e800); /* Set the background color to grey */
     filter: blur(5px); /* Add a blur effect to the shadow */
     border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
