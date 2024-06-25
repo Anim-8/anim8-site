@@ -13,7 +13,6 @@ type HexCardProps = {
 }
 
 const HexCard = ({ title, content, isAnimated = false, width = "100%", height = "435" }: HexCardProps) => {
-    console.log(isAnimated)
     return (
         <svg width={width} height={height} viewBox="0 0 435 435" fill="none" xmlns="http://www.w3.org/2000/svg" transform={`scale(${isAnimated ? 1.1 : 1})`}>
             <g filter="url(#filter0_f_172_1019)">
