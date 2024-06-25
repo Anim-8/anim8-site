@@ -50,6 +50,7 @@ const MissionStatement: React.FC = () => {
                 animated={width < 430 ? "" : value <= 25 ? cards[0].title : value <= 75 ? cards[1].title : cards[2].title} 
                 width={aspect} 
                 height={aspect}
+                isOnPhone={true}
             />
         </div>
     )

@@ -45,7 +45,7 @@ const Business = () => {
     const { width } = useDimensions(ref)
     const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
-        <div className='mt-10 lg:mt-0 w-full' id="business">
+        <div className='mt-10 lg:mt-0 w-full' id="business" ref={ref}>
             <Statement>
                 <SubHeader className='mb-4 pt-8'>Business</SubHeader>
                 <p className='text-sm'>
@@ -54,11 +54,10 @@ const Business = () => {
                     Unlike the current Saas industry, we unify the brain and body to avoid pricy cookie-cutter solutions that don&apos;t fully meet
                     the needs of you business and are difficult to integrate with.
                 </p>
-
             </Statement>
             { width >= 768 ? (
                 <>
-                    <div className={styles.gridContainer} ref={ref}>
+                    <div className={styles.gridContainer}>
                         <BusinessRow header='Body' description={descriptions.descriptionOne} card={cards[0]} width={width} hoverConfig={hoverConfig}/>
                         <div className='flex justify-center'>
                             <div className={styles.floatingBody}>
@@ -75,7 +74,7 @@ const Business = () => {
                             </div>
                     </div> 
                 </>
-                ) : <Cards cards={cards} width={aspect} height={aspect} />
+                ) : <Cards cards={cards} width={aspect} height={aspect} isOnPhone={true} />
             }
         </div>
     )
