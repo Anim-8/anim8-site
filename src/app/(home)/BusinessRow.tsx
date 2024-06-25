@@ -1,30 +1,39 @@
 import React from 'react'
 import SubHeader from '../components/shared/SubHeader'
-import Image from 'next/image';
+import { motion } from 'framer-motion'
+import { useMemo} from 'react'
 import styles from "./page.module.scss"
+import CardData from '@/models/CardData'
+import HexCardBlurred from '../components/shared/HexCardBlurred'
+
+interface HoverConfig {
+    y: number;
+    scale: number;
+  }
 
 type BusinessRowProps = {
-    url: string;
-    headerOne: string;
-    descriptionOne: string;
-    headerTwo: string;
-    descriptionTwo: string;
+    header: string;
+    description: string;
+    card: CardData;
+    width: number;
+    hoverConfig: HoverConfig;
 }
 
-const BusinessRow: React.FC<BusinessRowProps> = ({ url, headerOne, descriptionOne, headerTwo, descriptionTwo }) => {
+const BusinessRow: React.FC<BusinessRowProps> = ({ header, description, card,  width, hoverConfig}) => {
+    const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
-        <div className="mt-10 flex flex-row text-center items-center">
+        <div className={styles.leftColumn}>
             <div className="basis-1/4 md:basis-1/3">
-                <SubHeader>{headerOne}</SubHeader>
-                <p className='text-xs'>{descriptionOne}</p>
+                <SubHeader>{header}</SubHeader>
+                <p className='text-xs'>{description}</p>
             </div>
-            <div className="basis-1/2 md:basis-1/3 flex justify-center">
-                <Image src={url} alt={url} width={148} height={148} placeholder='blur' blurDataURL={url}/>
-                <div className={styles.brainGlow}></div>
-            </div>
-            <div className="basis-1/4 md:basis-1/3">
-                <SubHeader>{headerTwo}</SubHeader>
-                <p className='text-xs'>{descriptionTwo}</p>
+            <div className={styles.leftColumn}>
+                <motion.div
+                    className='lg:basis-1/3 flex justify-center'
+                    whileHover={hoverConfig}
+                >
+                    <HexCardBlurred title={card.title} content={card.content} width={aspect} height={aspect} />
+                </motion.div>
             </div>
         </div>
     )

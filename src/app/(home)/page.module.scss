@@ -35,35 +35,32 @@
     z-index: -1; /* Ensures the circle is behind the heading */
   }
 
-  .brainGlow {
-    position: absolute;
-    width: 10vw; /* Set the width of the circle */
-    height: 20vh; /* Set the height of the circle */
-    background: radial-gradient(circle, #72F5E7, #72f5e800); /* Set the background color to grey */
-    filter: blur(5px); /* Add a blur effect to the shadow */
-    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
-    z-index: -1;
-  }
-  
-  .bodyGlow {
-    position: absolute;
-    width: 10vw; /* Set the width of the circle */
-    height: 40vh; /* Set the height of the circle */
-    background: radial-gradient(circle, #72F5E7, #72f5e800); /* Set the background color to grey */
-    filter: blur(5px); /* Add a blur effect to the shadow */
-    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
-    z-index: -1;
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns with the center column taking more space */
+    gap: 10px; /* Gap between grid items */
+    max-height: 80vh;
+    padding-top: 5%;
+    z-index: 10;
   }
 
-  .greyCircle {
-    display: flex; /* Use flexbox to align the inner black circles */
-    justify-content: space-around; /* Space the inner circles evenly */
-    align-items: center; /* Center the inner circles vertically */
-    width: 100%; /* Set the width of the circle */
-    height: 5vh; /* Set the height of the circle */
-    background-color: #D9D9D9; /* Set the background color to grey */
-    border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
-    z-index: 10;
+.leftColumn,
+.rightColumn {
+  display: grid;
+  grid-template-rows: 10vh 35vh; /* Two rows in side columns */
+  justify-content: center;
+  z-index: 10;
+}
+
+.greyCircle {
+  display: flex; /* Use flexbox to align the inner black circles */
+  justify-content: space-around; /* Space the inner circles evenly */
+  align-items: center; /* Center the inner circles vertically */
+  width: 100%; /* Set the width of the circle */
+  height: 3vh; /* Set the height of the circle */
+  background-color: #D9D9D9; /* Set the background color to grey */
+  border-radius: 50%; /* Make the element a circle by setting border-radius to 50% */
+  z-index: 1;
   }
 
   .orbShadow {
@@ -109,10 +106,10 @@
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
-    background-image: url('/hero_background.webp');
+    background-image: url('/infiniteBackground.webp');
     background-size: cover;
     background-position: center;
-    animation: scrollBackground 30s linear infinite; /* Apply the animation */
+    animation: scrollBackground 300s linear infinite; /* Apply the animation */
   }
   
   .headerContainer {
@@ -146,6 +143,19 @@
     background: linear-gradient(to left, rgb(0, 0, 0),rgba(0, 0, 0, 0.10));
   }
   
+.floatingBody {
+    position: relative;
+    animation: float 3s infinite;
+  }
+  
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 @media screen and (min-width: 300px) {
     .essentialCard {

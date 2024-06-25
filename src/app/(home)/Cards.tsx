@@ -10,9 +10,10 @@ type CardsProps = {
     className?: string;
     width?: alphanumeric;
     height?: alphanumeric;
+    isOnPhone?: boolean;
 }
 
-const Cards:React.FC<CardsProps> = memo(({ cards, width, height, animated = "", className = "" }) => {
+const Cards:React.FC<CardsProps> = memo(({ cards, width, height, animated = "", isOnPhone = false, className = "" }) => {
     return (
         <div className={`flex w-full flex-col lg:flex-row ${className}`}>
             {cards.map(card => (
@@ -22,6 +23,7 @@ const Cards:React.FC<CardsProps> = memo(({ cards, width, height, animated = "", 
                         content={card.content} 
                         width={width}
                         height={height}
+                        isAnimated={isOnPhone ? true : animated === card.title}
                     />
                 </motion.div>
             ))}
