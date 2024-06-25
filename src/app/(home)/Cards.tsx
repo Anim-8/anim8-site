@@ -22,6 +22,7 @@ const Cards:React.FC<CardsProps> = memo(({ cards, width, height, animated = "", 
                         content={card.content} 
                         width={width}
                         height={height}
+                        isAnimated={animated === card.title}
                     />
                 </motion.div>
             ))}
