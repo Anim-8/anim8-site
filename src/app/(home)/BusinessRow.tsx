@@ -20,7 +20,6 @@ const BusinessRow: React.FC<BusinessRowProps> = ({ url, headerOne, descriptionOn
             </div>
             <div className="basis-1/2 md:basis-1/3 flex justify-center">
                 <Image src={url} alt={url} width={148} height={148} placeholder='blur' blurDataURL={url}/>
-                <div className={styles.brainGlow}></div>
             </div>
             <div className="basis-1/4 md:basis-1/3">
                 <SubHeader>{headerTwo}</SubHeader>
