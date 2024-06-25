@@ -57,7 +57,9 @@ const Business = () => {
             <div className={styles.gridContainer} ref={ref}>
                 <BusinessRow header='Body' description={descriptions.descriptionOne} card={cards[0]} width={width} hoverConfig={hoverConfig}/>
                 <div className='flex justify-center'>
-                    <Image src="/brainBody.webp" alt="body.webp" width={165} height={372} />
+                    <div className={styles.floatingBody}>
+                        <Image src="/brainBody.webp" alt="body.webp" width={165} height={372} />
+                    </div>
                 </div>
                 <BusinessRow header='Brain' description={descriptions.descriptionTwo} card={cards[1]} width={width} hoverConfig={hoverConfig}/>
             </div>
