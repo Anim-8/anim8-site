@@ -5,8 +5,9 @@ import SubHeader from '../components/shared/SubHeader'
 import CardData from '@/models/CardData'
 import BusinessRow from './BusinessRow'
 import useDimensions from '../../hooks/useDImensions'
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import styles from "./page.module.scss"
+import Cards from './Cards'
 
 const cards: CardData[] = [
     {
@@ -42,6 +43,7 @@ const hoverConfig = { y: -50, scale: 1.1 }
 const Business = () => {
     const ref = useRef<any>()
     const { width } = useDimensions(ref)
+    const aspect: string | undefined = useMemo(() => width < 430 ? "85%" : undefined, [width])
     return (
         <div className='mt-10 lg:mt-0 w-full' id="business">
             <Statement>
@@ -54,22 +56,27 @@ const Business = () => {
                 </p>
 
             </Statement>
-            <div className={styles.gridContainer} ref={ref}>
-                <BusinessRow header='Body' description={descriptions.descriptionOne} card={cards[0]} width={width} hoverConfig={hoverConfig}/>
-                <div className='flex justify-center'>
-                    <div className={styles.floatingBody}>
-                        <Image src="/brainBody.webp" alt="body.webp" width={165} height={372} />
+            { width >= 768 ? (
+                <>
+                    <div className={styles.gridContainer} ref={ref}>
+                        <BusinessRow header='Body' description={descriptions.descriptionOne} card={cards[0]} width={width} hoverConfig={hoverConfig}/>
+                        <div className='flex justify-center'>
+                            <div className={styles.floatingBody}>
+                                <Image src="/brainBody.webp" alt="body.webp" width={165} height={372} />
+                            </div>
+                        </div>
+                    <BusinessRow header='Brain' description={descriptions.descriptionTwo} card={cards[1]} width={width} hoverConfig={hoverConfig}/>
                     </div>
-                </div>
-                <BusinessRow header='Brain' description={descriptions.descriptionTwo} card={cards[1]} width={width} hoverConfig={hoverConfig}/>
-            </div>
-            <div className='py-12'>
-                <div className={styles.greyCircle}>
-                        <div className={styles.orbShadow}></div>
-                        <div className={styles.bodyShadow}></div>
-                        <div className={styles.orbShadow}></div>
-                    </div>
-            </div>
+                    <div className='py-12'>
+                        <div className={styles.greyCircle}>
+                                <div className={styles.orbShadow}></div>
+                                <div className={styles.bodyShadow}></div>
+                                <div className={styles.orbShadow}></div>
+                            </div>
+                    </div> 
+                </>
+                ) : <Cards cards={cards} width={aspect} height={aspect} />
+            }
         </div>
     )
 }
