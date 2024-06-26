@@ -3,7 +3,7 @@ import { Merriweather } from "next/font/google";
 import "./styles/globals.scss";
 import Navigation from "./components/nav/Navigation";
 import Footer from "./components/nav/Footer";
-import Head from "next/head";
+import Script from "next/script";
 
 const merriweather = Merriweather({ subsets: ["latin"], weight: "300" });
 
@@ -13,15 +13,16 @@ export const metadata: Metadata = {
   icons: "/favicon.png"
 };
 
-export default function RootLayout({
+export default function RootLayout(
+  {
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <script
+      <head>
+        <Script id="matomo-analytics"
           dangerouslySetInnerHTML={{
             __html: `
               var _paq = window._paq = window._paq || [];
@@ -37,7 +38,7 @@ export default function RootLayout({
             `,
           }}
         />
-      </Head>
+      </head>
       <body className={`${merriweather.className} theme-dark`}>
         <Navigation />
         <main className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">{children}</main>
