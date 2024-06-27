@@ -54,6 +54,9 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Set environment variable
+        env:
+          NEXT_PUBLIC_MATOMO_URL: ${{ secrets.NEXT_PUBLIC_MATOMO_URL }}
+          NEXT_PUBLIC_MATOMO_SITE_ID: ${{ secrets.NEXT_PUBLIC_MATOMO_SITE_ID }}
         run: |
           echo "NEXT_PUBLIC_MATOMO_URL=${{ secrets.NEXT_PUBLIC_MATOMO_URL }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_MATOMO_SITE_ID=${{ secrets.NEXT_PUBLIC_MATOMO_SITE_ID }}" >> $GITHUB_ENV
