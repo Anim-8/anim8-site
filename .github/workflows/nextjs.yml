@@ -53,6 +53,9 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Set environment variable
+          echo "NEXT_PUBLIC_MATOMO_URL=${{ secrets.NEXT_PUBLIC_MATOMO_URL }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_MATOMO_SITE_ID=${{ secrets.NEXT_PUBLIC_MATOMO_SITE_ID }}" >> $GITHUB_ENV
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
