@@ -19,14 +19,12 @@ export default function RootLayout(
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (typeof window !== 'undefined') {
     console.log('NEXT_PUBLIC_MATOMO_URL:', process.env.NEXT_PUBLIC_MATOMO_URL);
     console.log('NEXT_PUBLIC_MATOMO_SITE_ID:', process.env.NEXT_PUBLIC_MATOMO_SITE_ID);
-  }
   return (
     <html lang="en">
       <head>
-        <Script id="matomo-analytics"
+        <Script id="matomo-analytics" strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               var _paq = window._paq = window._paq || [];
@@ -34,6 +32,8 @@ export default function RootLayout(
               _paq.push(['enableLinkTracking']);
               (function() {
                 var u="${process.env.NEXT_PUBLIC_MATOMO_URL}";
+                console.log('Matomo Tracker URL:', u + 'matomo.php'); // Added for debugging
+                console.log('Matomo JS URL:', u + 'matomo.js'); // Added for debugging
                 _paq.push(['setTrackerUrl', u + 'matomo.php']);
                 _paq.push(['setSiteId', '${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}']);
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
