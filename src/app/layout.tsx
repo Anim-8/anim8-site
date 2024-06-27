@@ -19,8 +19,6 @@ export default function RootLayout(
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    console.log('NEXT_PUBLIC_MATOMO_URL:', process.env.NEXT_PUBLIC_MATOMO_URL);
-    console.log('NEXT_PUBLIC_MATOMO_SITE_ID:', process.env.NEXT_PUBLIC_MATOMO_SITE_ID);
   return (
     <html lang="en">
       <head>
