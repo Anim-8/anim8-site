@@ -28,16 +28,15 @@ export default function RootLayout(
           dangerouslySetInnerHTML={{
             __html: `
               var _paq = window._paq = window._paq || [];
+              /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
               _paq.push(['trackPageView']);
               _paq.push(['enableLinkTracking']);
               (function() {
-                var u="${process.env.NEXT_PUBLIC_MATOMO_URL}";
-                console.log('Matomo Tracker URL:', u + 'matomo.php'); // Added for debugging
-                console.log('Matomo JS URL:', u + 'matomo.js'); // Added for debugging
-                _paq.push(['setTrackerUrl', u + 'matomo.php']);
-                _paq.push(['setSiteId', '${process.env.NEXT_PUBLIC_MATOMO_SITE_ID}']);
+                var u="https://anim8tech.matomo.cloud/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '1']);
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src=u + 'matomo.js'; s.parentNode.insertBefore(g, s);
+                g.async=true; g.src='https://cdn.matomo.cloud/anim8tech.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
               })();
             `,
           }}
