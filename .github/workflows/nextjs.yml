@@ -55,11 +55,11 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Set environment variable
         env:
-          NEXT_PUBLIC_MATOMO_URL: ${{ secrets.NEXT_PUBLIC_MATOMO_URL }}
-          NEXT_PUBLIC_MATOMO_SITE_ID: ${{ secrets.NEXT_PUBLIC_MATOMO_SITE_ID }}
+          NEXT_PUBLIC_MATOMO_URL: ${{ vars.NEXT_PUBLIC_MATOMO_URL }}
+          NEXT_PUBLIC_MATOMO_SITE_ID: ${{ vars.NEXT_PUBLIC_MATOMO_SITE_ID }}
         run: |
-          echo "NEXT_PUBLIC_MATOMO_URL=${{ secrets.NEXT_PUBLIC_MATOMO_URL }}" 
-          echo "NEXT_PUBLIC_MATOMO_SITE_ID=${{ secrets.NEXT_PUBLIC_MATOMO_SITE_ID }}"
+          echo "NEXT_PUBLIC_MATOMO_URL=${{ vars.NEXT_PUBLIC_MATOMO_URL }}" 
+          echo "NEXT_PUBLIC_MATOMO_SITE_ID=${{ vars.NEXT_PUBLIC_MATOMO_SITE_ID }}"
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
