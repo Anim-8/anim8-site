@@ -99,48 +99,9 @@
   }
   
   .heroContainer {
-    height: 80vh;;
+    @include flex(column, wrap, center, center);
+    height: 80vh;
     width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
-    background-image: url('/infiniteBackground.webp');
-    background-size: cover;
-    background-position: center;
-    animation: scrollBackground 300s linear infinite; /* Apply the animation */
-  }
-  
-  .headerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .headerBackground {
-    position: absolute;
-    width: 200px;
-    height: 30px;
-    background: radial-gradient(ellipse at center, rgb(0, 0, 0), rgba(0, 0, 0, 0.384));
-    border-radius: 50%;
-  }
-  
-  .leftRectangle {
-    height: 80vh;
-    width: 20vw;
-    position: absolute;
-    margin-right: 80%;
-    background: linear-gradient(to right, rgb(0, 0, 0),rgba(0, 0, 0, 0.10));
-  }
-  
-  .rightRectangle {
-    height: 80vh;
-    width: 20vw;
-    position: absolute;
-    margin-left: 80%;
-    background: linear-gradient(to left, rgb(0, 0, 0),rgba(0, 0, 0, 0.10));
   }
   
 .floatingBody {
