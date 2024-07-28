@@ -7,13 +7,13 @@ const geometry = new PlaneGeometry(3, 3)
 const sphere = new SphereGeometry(1, 64, 64)
 const material = new MeshBasicMaterial({side: 2})
 const pointsMaterial = new MeshBasicMaterial({ color: `hsl(${Math.random() * 360}, 100%, 50%)`, depthTest: false, blending: AdditiveBlending,})
-
+const COLORS = [200, 111, 71, 297, 348]
 const HomeScene = ({ count = 10000 }) => {
     const spritesRef = useRef<any[]>([]);
     const pointsRef = useRef<any>(null)
     const { scene, camera, viewport } = useThree()
     const sprites = useMemo(() => {
-        return Array.from({ length: count }).map((_, i) => {
+        return Array.from({ length: count / 2 }).map((_, i) => {
             const x = Math.random() * 1000 - 500;
             const y = Math.random() * 1000 - 500;
             const z = Math.random() * 1000 - 500;
@@ -25,17 +25,17 @@ const HomeScene = ({ count = 10000 }) => {
                     ref={(mesh: any) => spritesRef.current.push(mesh)}
                     position={[x, y, z]}
                     scale={[scale, scale, 1]}
-                    color={`hsl(${Math.random() * 360}, 100%, 50%)`}
+                    color={`hsl(${COLORS[i % 5] / 360}, 100%, 50%)`}
                 />
             )
         })
     }, [count])
 
     const points = useMemo(() => {
-        return Array.from({ length: count - 500 }).map((_, i) => {
-            const x = Math.random() * 1000;
-            const y = Math.random() * 1000;
-            const z = Math.random() * 1000;
+        return Array.from({ length: count / 2 }).map((_, i) => {
+            const x = Math.random() * 1000 - 500;
+            const y = Math.random() * 1000 - 500;
+            const z = Math.random() * 1000 - 500;
             const scale = Math.random() * 2;
             return (
                 <Instance
@@ -53,14 +53,12 @@ const HomeScene = ({ count = 10000 }) => {
         camera.lookAt(scene.position);
         if (spritesRef.current) {
             for (let i = 0; i < spritesRef.current.length; i++) {
-                const h = ( 360 * ( .8 + time ) % 360 ) / 360;
                 spritesRef.current[i].rotation.y = time * ( i < 4 ? i + 1 : - ( i + 1 ) ) / 10;
-                spritesRef.current[i].color.setHSL(h, 1, .5)
+                spritesRef.current[i].color.setHSL(COLORS[i % 5] / 360, 1, .5)
             }
         }
         if (pointsRef.current) {
-            const h = ( 360 * ( .8 + time ) % 360 ) / 360;
-            (pointsRef.current.material as MeshBasicMaterial).color.setHSL(h, 1, .5)
+            (pointsRef.current.material as MeshBasicMaterial).color.setHSL(COLORS[0] / 360, 1, .5)
         }
     })
 
