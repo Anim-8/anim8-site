@@ -21,25 +21,6 @@ export default function RootLayout(
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script id="matomo-analytics" strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _paq = window._paq = window._paq || [];
-              /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-              _paq.push(['trackPageView']);
-              _paq.push(['enableLinkTracking']);
-              (function() {
-                var u="https://anim8tech.matomo.cloud/";
-                _paq.push(['setTrackerUrl', u+'matomo.php']);
-                _paq.push(['setSiteId', '1']);
-                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-                g.async=true; g.src='https://cdn.matomo.cloud/anim8tech.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-              })();
-            `,
-          }}
-        />
-      </head>
       <body className={`${merriweather.className} theme-dark`}>
         <Navigation />
         <main className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">{children}</main>
